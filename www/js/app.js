@@ -5,7 +5,7 @@ $(document).ready(function() {
 function onDeviceReady() {
   // console.log('ciao');
   // console.log(cordova.file.applicationDirectory);
-  window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/prodotti.csv", gotFile, fail);
+  window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "prodotti.csv", gotFile, fail);
   // $('#textArea').text('prova');
 }
 // document.addEventListener("deviceready", function() {
