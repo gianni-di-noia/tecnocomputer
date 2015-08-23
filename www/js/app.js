@@ -24,7 +24,7 @@ function gotFile(fileEntry) {
       document.querySelector("#textArea").innerHTML = this.result;
     }
   });
-})
+}
 
 function fail(error) {
   console.log(error.code);
