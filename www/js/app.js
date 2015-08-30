@@ -21,20 +21,27 @@ $(document).ready(function() {
       }, ];
       simpleStorage.set('clienti', clienti);
       simpleStorage.set('articoli', articoli);
-      $('#storage').val(simpleStorage.storageSize())
+      var storage = simpleStorage.storageSize();
+      $('#storage').val(storage);
     },
     'clienti.html': function() {
       var clienti = simpleStorage.get('clienti');
-      console.log(clienti);
+      $('#clienti_list').val('');
       $.each(clienti, function(index, val) {
-        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
+        $.get('cliente.html', function(template) {
+          $.tmpl(template, {
+            'val': val
+          }).appendTo('#clienti_list');
+        });
       });
+      //   $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' (' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
+      // });
     },
     'articoli.html': function() {
       var articoli = simpleStorage.get('articoli');
-      console.log(articoli);
+      $('#articoli_list').val('');
       $.each(articoli, function(index, val) {
-        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.dimensioni + ') <p>' + val.categoria + '</p> </a> </li>');
+        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' (' + val.dimensioni + ') <p>' + val.categoria + '</p> </a> </li>');
       });
     },
     'tabelle.html': function() {
