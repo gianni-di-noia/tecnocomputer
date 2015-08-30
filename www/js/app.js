@@ -23,19 +23,14 @@ function onDeviceReady() {
         'dimensioni': 'medio',
         'categoria': 'telefono',
       }];
-      // window.localStorage.getItem("uid");
       db_set("clienti", clienti);
       db_set("articoli", articoli);
-      // simpleStorage.set('clienti', clienti);
-      // simpleStorage.set('articoli', articoli);
-      // var storage = simpleStorage.storageSize();
-      // $('#storage').val(storage);
     },
     'clienti.html': function() {
       var clienti = db_get("clienti");
+      console.log(clienti);
       $('#clienti_list').html('');
       $.each(clienti, function(index, val) {
-        // $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
         $.get('cliente.html', function(template) {
           $.tmpl(template, {
             'val': val
@@ -45,9 +40,9 @@ function onDeviceReady() {
     },
     'articoli.html': function() {
       var articoli = db_get("articoli");
+      console.log(articoli);
       $('#articoli_list').html('');
       $.each(articoli, function(index, val) {
-        // $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
         $.get('articolo.html', function(template) {
           $.tmpl(template, {
             'val': val
