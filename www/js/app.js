@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var initializers = {
-    '/': function() {
+    '/index.html': function() {
       var clienti = [{
         'nome': 'apple',
         'citta': 'cupertino',
@@ -51,6 +51,8 @@ $(document).ready(function() {
   };
   window.addEventListener('push', function(e) {
     // Remove the host from the URL to get the pathname
+    console.log(window.location.origin);
+    // /android_asset/www/
     var pathname = e.detail.state.url.replace(window.location.origin, '');
     console.log(pathname);
     initializePage(pathname);
