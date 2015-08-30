@@ -7,7 +7,7 @@ function onDeviceReady() {
     var clienti = simpleStorage.get('clienti');
     console.log(clienti);
     $.each(clienti, function(index, val) {
-        $.('clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
+        $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
     });
 }
 // for cliente in clienti_load:
