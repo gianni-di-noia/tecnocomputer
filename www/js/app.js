@@ -21,8 +21,8 @@ $(document).ready(function() {
       }, ];
       simpleStorage.set('clienti', clienti);
       simpleStorage.set('articoli', articoli);
-      var storage = simpleStorage.storageSize();
-      $('#storage').val(storage);
+      // var storage = simpleStorage.storageSize();
+      // $('#storage').val(storage);
     },
     'clienti.html': function() {
       var clienti = simpleStorage.get('clienti');
@@ -67,5 +67,5 @@ $(document).ready(function() {
     initializePage(file_name);
   });
   // Initialize the page on load, using the current pathname
-  // initializePage('index.html');
+  initializePage('index.html');
 })
