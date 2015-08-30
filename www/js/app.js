@@ -28,22 +28,24 @@ $(document).ready(function() {
       var clienti = simpleStorage.get('clienti');
       $('#clienti_list').val('');
       $.each(clienti, function(index, val) {
-        $.get('cliente.html', function(template) {
-          $.tmpl(template, {
-            'val': val
-          }).appendTo('#clienti_list');
-        });
+        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
+        // $.get('cliente.html', function(template) {
+        //   $.tmpl(template, {
+        //     'val': val
+        //   }).appendTo('#clienti_list');
+        // });
       });
     },
     'articoli.html': function() {
       var articoli = simpleStorage.get('articoli');
       $('#articoli_list').val('');
       $.each(articoli, function(index, val) {
-        $.get('articolo.html', function(template) {
-          $.tmpl(template, {
-            'val': val
-          }).appendTo('#articoli_list');
-        });
+        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
+        // $.get('articolo.html', function(template) {
+        //   $.tmpl(template, {
+        //     'val': val
+        //   }).appendTo('#articoli_list');
+        // });
       });
     },
     'tabelle.html': function() {
