@@ -67,5 +67,5 @@ $(document).ready(function() {
     initializePage(file_name);
   });
   // Initialize the page on load, using the current pathname
-  initializePage('index.html');
+  // initializePage('index.html');
 })
