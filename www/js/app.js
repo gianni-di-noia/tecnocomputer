@@ -9,7 +9,7 @@ $(document).ready(function() {
         'nome': 'google',
         'citta': 'mountain view',
         'telefono': '1234567890',
-      }, ];
+      }];
       var articoli = [{
         'nome': 'iphone',
         'dimensioni': 'piccolo',
@@ -18,37 +18,38 @@ $(document).ready(function() {
         'nome': 'nexus',
         'dimensioni': 'medio',
         'categoria': 'telefono',
-      }, ];
+      }];
       // window.localStorage.getItem("uid");
-      window.localStorage.setItem("clienti", clienti);
-      window.localStorage.setItem("articoli", articoli);
+      db_set("clienti", clienti);
+      db_set("articoli", articoli);
       // simpleStorage.set('clienti', clienti);
       // simpleStorage.set('articoli', articoli);
       // var storage = simpleStorage.storageSize();
       // $('#storage').val(storage);
     },
     'clienti.html': function() {
-      var clienti = window.localStorage.getItem("clienti");
+      var clienti = db_get("clienti");
+      console.log(clienti);
       $('#clienti_list').val('');
       $.each(clienti, function(index, val) {
-        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
-        // $.get('cliente.html', function(template) {
-        //   $.tmpl(template, {
-        //     'val': val
-        //   }).appendTo('#clienti_list');
-        // });
+        // $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
+        $.get('cliente.html', function(template) {
+          $.tmpl(template, {
+            'val': val
+          }).appendTo('#clienti_list');
+        });
       });
     },
     'articoli.html': function() {
-      var articoli = window.localStorage.getItem("articoli");
+      var articoli = db_get("articoli");
       $('#articoli_list').val('');
       $.each(articoli, function(index, val) {
-        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
-        // $.get('articolo.html', function(template) {
-        //   $.tmpl(template, {
-        //     'val': val
-        //   }).appendTo('#articoli_list');
-        // });
+        // $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
+        $.get('articolo.html', function(template) {
+          $.tmpl(template, {
+            'val': val
+          }).appendTo('#articoli_list');
+        });
       });
     },
     'tabelle.html': function() {
@@ -74,3 +75,12 @@ $(document).ready(function() {
   // Initialize the page on load, using the current pathname
   initializePage('index.html');
 })
+
+function db_set(key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value))
+  return
+}
+
+function db_get(key) {
+  return $.parseJSON(window.localStorage.getItem(key));
+}
