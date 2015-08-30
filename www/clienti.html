@@ -22,8 +22,16 @@
     </header>
 
     <div class="content">
-      <script type="text/javascript" src="js/clienti.js"></script>
       <ul class="table-view" id="clienti_list"> </ul>
+      <script type="text/javascript">
+      $(document).ready(function() {
+        var clienti = simpleStorage.get('clienti');
+        console.log(clienti);
+        $.each(clienti, function(index, val) {
+            $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
+        });
+      });
+</script>
     </div><!-- /.content -->
   </body>
 </html>
