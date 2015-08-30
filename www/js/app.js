@@ -29,8 +29,7 @@ $(document).ready(function() {
     },
     'clienti.html': function() {
       var clienti = db_get("clienti");
-      console.log(clienti);
-      $('#clienti_list').val('');
+      $('#clienti_list').html('');
       $.each(clienti, function(index, val) {
         // $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
         $.get('cliente.html', function(template) {
@@ -42,7 +41,7 @@ $(document).ready(function() {
     },
     'articoli.html': function() {
       var articoli = db_get("articoli");
-      $('#articoli_list').val('');
+      $('#articoli_list').html('');
       $.each(articoli, function(index, val) {
         // $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
         $.get('articolo.html', function(template) {
