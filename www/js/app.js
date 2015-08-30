@@ -10,7 +10,7 @@ $(document).ready(function() {
         'citta': 'mountain view',
         'telefono': '1234567890',
       }, ];
-      var prodotti = [{
+      var articoli = [{
         'nome': 'iphone',
         'dimensioni': 'piccolo',
         'categoria': 'telefono',
@@ -20,7 +20,7 @@ $(document).ready(function() {
         'categoria': 'telefono',
       }, ];
       simpleStorage.set('clienti', clienti);
-      simpleStorage.set('prodotti', prodotti);
+      simpleStorage.set('articoli', articoli);
     },
     'clienti.html': function() {
       var clienti = simpleStorage.get('clienti');
@@ -32,7 +32,13 @@ $(document).ready(function() {
       });
     },
     'articoli.html': function() {
-      // Do stuff for settings page
+      var articoli = simpleStorage.get('articoli');
+      console.log(articoli);
+      $.each(articoli, function(index, val) {
+        console.log(val);
+        // $('#clienti_list').append(val);
+        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' <p> ' + val.citta + ' </p> </a> </li>');
+      });
     },
     'tabelle.html': function() {
       // Do stuff for settings page
