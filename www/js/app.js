@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var initializers = {
-    '/index.html': function() {
+    'index.html': function() {
       var clienti = [{
         'nome': 'apple',
         'citta': 'cupertino',
@@ -22,7 +22,7 @@ $(document).ready(function() {
       simpleStorage.set('clienti', clienti);
       simpleStorage.set('prodotti', prodotti);
     },
-    '/clienti.html': function() {
+    'clienti.html': function() {
       var clienti = simpleStorage.get('clienti');
       console.log(clienti);
       $.each(clienti, function(index, val) {
@@ -31,13 +31,13 @@ $(document).ready(function() {
         $('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.citta + ' < /p> < /a > < /li>');
       });
     },
-    '/articoli.html': function() {
+    'articoli.html': function() {
       // Do stuff for settings page
     },
-    '/tabelle.html': function() {
+    'tabelle.html': function() {
       // Do stuff for settings page
     },
-    '/settings.html': function() {
+    'settings.html': function() {
       // Do stuff for settings page
     },
   };
@@ -51,14 +51,9 @@ $(document).ready(function() {
   };
   window.addEventListener('push', function(e) {
     // Remove the host from the URL to get the pathname
-    console.log(e);
-    console.log(e.detail.state.url);
-    // /android_asset/www/
-    var pathname = e.detail.state.url.replace(window.location.origin, '');
-    console.log(pathname);
-    initializePage(pathname);
+    var file_name = e.detail.state.url.replace('file:///android_asset/www/', '');
+    initializePage(file_name);
   });
   // Initialize the page on load, using the current pathname
-  console.log(window.location.pathname);
-  initializePage(window.location.pathname);
+  initializePage('index.html');
 })
