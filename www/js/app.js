@@ -21,6 +21,7 @@ $(document).ready(function() {
   simpleStorage.set('clienti', clienti);
   simpleStorage.set('prodotti', prodotti);
   // onDeviceReady();
+  window.addEventListener('push', myFunction);
 });
 // function onDeviceReady() {
 //   var clienti = [{
