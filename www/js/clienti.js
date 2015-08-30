@@ -4,8 +4,9 @@ $(document).ready(function() {
 });
 
 function onDeviceReady() {
-    var clienti_load = simpleStorage.get('clienti');
-    $.each(clienti_load, function(index, val) {
+    var clienti = simpleStorage.get('clienti');
+    console.log(clienti);
+    $.each(clienti, function(index, val) {
         $.('clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
     });
 }
