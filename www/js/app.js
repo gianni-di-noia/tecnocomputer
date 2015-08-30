@@ -77,7 +77,7 @@ function onDeviceReady() {
   });
   // Initialize the page on load, using the current pathname
   initializePage('index.html');
-})
+}
 
 function db_set(key, value) {
   window.localStorage.setItem(key, JSON.stringify(value));
