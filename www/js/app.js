@@ -77,8 +77,7 @@ $(document).ready(function() {
 })
 
 function db_set(key, value) {
-  window.localStorage.setItem(key, JSON.stringify(value))
-  return
+  window.localStorage.setItem(key, JSON.stringify(value));
 }
 
 function db_get(key) {
