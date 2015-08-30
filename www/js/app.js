@@ -28,7 +28,7 @@ $(document).ready(function() {
       $.each(clienti, function(index, val) {
         console.log(val);
         // $('#clienti_list').append(val);
-        $('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.citta + ' < /p> < /a > < /li>');
+        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' <p> ' + val.citta + ' </p> </a> </li>');
       });
     },
     'articoli.html': function() {
