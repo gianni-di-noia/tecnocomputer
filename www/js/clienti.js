@@ -1,15 +1,17 @@
 $(document).ready(function() {
-    document.addEventListener("deviceready", onDeviceReady, false);
-    onDeviceReady();
-});
-
-function onDeviceReady() {
     var clienti = simpleStorage.get('clienti');
     console.log(clienti);
     $.each(clienti, function(index, val) {
         $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
     });
-}
+});
+// function onDeviceReady() {
+//     var clienti = simpleStorage.get('clienti');
+//     console.log(clienti);
+//     $.each(clienti, function(index, val) {
+//         $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
+//     });
+// }
 // for cliente in clienti_load:
 // $('#textArea').text(cordova.file);
 // console.log(cordova.file.applicationDirectory);

@@ -1,10 +1,5 @@
 $(document).ready(function() {
   // document.addEventListener("deviceready", onDeviceReady, false);
-  // console.log('prova');
-  onDeviceReady();
-});
-
-function onDeviceReady() {
   var clienti = [{
     'nome': 'apple',
     'città': 'cupertino',
@@ -25,16 +20,39 @@ function onDeviceReady() {
   }, ];
   simpleStorage.set('clienti', clienti);
   simpleStorage.set('prodotti', prodotti);
-  // db_set('storage', simpleStorage.storageSize());
-  // var clienti_load = simpleStorage.get(clienti);
-  // $.each(clienti_load, function(index, val) {
-  /* iterate through array or object */
-  // });
-  // for cliente in clienti_load:
-  // $('#textArea').text(cordova.file);
-  // console.log(cordova.file.applicationDirectory);
-  // window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "prodotti.csv", gotFile, fail);
-}
+  // onDeviceReady();
+});
+// function onDeviceReady() {
+//   var clienti = [{
+//     'nome': 'apple',
+//     'città': 'cupertino',
+//     'telefono': '0123456789',
+//   }, {
+//     'nome': 'google',
+//     'città': 'mountain view',
+//     'telefono': '1234567890',
+//   }, ];
+//   var prodotti = [{
+//     'nome': 'iphone',
+//     'dimensioni': 'piccolo',
+//     'categoria': 'telefono',
+//   }, {
+//     'nome': 'nexus',
+//     'dimensioni': 'medio',
+//     'categoria': 'telefono',
+//   }, ];
+//   simpleStorage.set('clienti', clienti);
+//   simpleStorage.set('prodotti', prodotti);
+// }
+// db_set('storage', simpleStorage.storageSize());
+// var clienti_load = simpleStorage.get(clienti);
+// $.each(clienti_load, function(index, val) {
+/* iterate through array or object */
+// });
+// for cliente in clienti_load:
+// $('#textArea').text(cordova.file);
+// console.log(cordova.file.applicationDirectory);
+// window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "prodotti.csv", gotFile, fail);
 //This alias is a read-only pointer to the app itself
 // window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/index.html", gotFile, fail);
 // }
