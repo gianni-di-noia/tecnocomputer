@@ -26,8 +26,6 @@ $(document).ready(function() {
       var clienti = simpleStorage.get('clienti');
       console.log(clienti);
       $.each(clienti, function(index, val) {
-        console.log(val);
-        // $('#clienti_list').append(val);
         $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
       });
     },
@@ -35,9 +33,7 @@ $(document).ready(function() {
       var articoli = simpleStorage.get('articoli');
       console.log(articoli);
       $.each(articoli, function(index, val) {
-        console.log(val);
-        // $('#clienti_list').append(val);
-        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.categoria + '</p> </a> </li>');
+        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.categoria + '</p> </a> </li>');
       });
     },
     'tabelle.html': function() {
