@@ -34,14 +34,16 @@ $(document).ready(function() {
           }).appendTo('#clienti_list');
         });
       });
-      //   $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' (' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
-      // });
     },
     'articoli.html': function() {
       var articoli = simpleStorage.get('articoli');
       $('#articoli_list').val('');
       $.each(articoli, function(index, val) {
-        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + ' (' + val.dimensioni + ') <p>' + val.categoria + '</p> </a> </li>');
+        $.get('articolo.html', function(template) {
+          $.tmpl(template, {
+            'val': val
+          }).appendTo('#articoli_list');
+        });
       });
     },
     'tabelle.html': function() {
