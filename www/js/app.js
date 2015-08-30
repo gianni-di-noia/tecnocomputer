@@ -3,11 +3,11 @@ $(document).ready(function() {
     '/index.html': function() {
       var clienti = [{
         'nome': 'apple',
-        'città': 'cupertino',
+        'citta': 'cupertino',
         'telefono': '0123456789',
       }, {
         'nome': 'google',
-        'città': 'mountain view',
+        'citta': 'mountain view',
         'telefono': '1234567890',
       }, ];
       var prodotti = [{
@@ -26,7 +26,7 @@ $(document).ready(function() {
       var clienti = simpleStorage.get('clienti');
       console.log(clienti);
       $.each(clienti, function(index, val) {
-        $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
+        $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.citta + ' < /p> < /a > < /li>');
       });
     },
     '/articoli.html': function() {
@@ -64,11 +64,11 @@ $(document).ready(function() {
 // function onDeviceReady() {
 //   var clienti = [{
 //     'nome': 'apple',
-//     'città': 'cupertino',
+//     'citta': 'cupertino',
 //     'telefono': '0123456789',
 //   }, {
 //     'nome': 'google',
-//     'città': 'mountain view',
+//     'citta': 'mountain view',
 //     'telefono': '1234567890',
 //   }, ];
 //   var prodotti = [{
