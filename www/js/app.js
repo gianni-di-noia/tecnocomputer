@@ -21,19 +21,20 @@ $(document).ready(function() {
       }, ];
       simpleStorage.set('clienti', clienti);
       simpleStorage.set('articoli', articoli);
+      $('#storage').val(simpleStorage.storageSize())
     },
     'clienti.html': function() {
       var clienti = simpleStorage.get('clienti');
       console.log(clienti);
       $.each(clienti, function(index, val) {
-        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
+        $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
       });
     },
     'articoli.html': function() {
       var articoli = simpleStorage.get('articoli');
       console.log(articoli);
       $.each(articoli, function(index, val) {
-        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.categoria + '</p> </a> </li>');
+        $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.dimensioni + ') <p>' + val.categoria + '</p> </a> </li>');
       });
     },
     'tabelle.html': function() {
