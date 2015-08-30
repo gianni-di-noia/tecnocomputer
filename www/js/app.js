@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  document.addEventListener("deviceready", onDeviceReady, false);
+});
+
+function onDeviceReady() {
   var initializers = {
     'index.html': function() {
       var clienti = [{
