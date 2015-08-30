@@ -19,13 +19,16 @@ $(document).ready(function() {
         'dimensioni': 'medio',
         'categoria': 'telefono',
       }, ];
-      simpleStorage.set('clienti', clienti);
-      simpleStorage.set('articoli', articoli);
+      // window.localStorage.getItem("uid");
+      window.localStorage.setItem("clienti", clienti);
+      window.localStorage.setItem("articoli", articoli);
+      // simpleStorage.set('clienti', clienti);
+      // simpleStorage.set('articoli', articoli);
       // var storage = simpleStorage.storageSize();
       // $('#storage').val(storage);
     },
     'clienti.html': function() {
-      var clienti = simpleStorage.get('clienti');
+      var clienti = window.localStorage.getItem("clienti");
       $('#clienti_list').val('');
       $.each(clienti, function(index, val) {
         $('#clienti_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '<p>' + val.citta + '</p> </a> </li>');
@@ -37,7 +40,7 @@ $(document).ready(function() {
       });
     },
     'articoli.html': function() {
-      var articoli = simpleStorage.get('articoli');
+      var articoli = window.localStorage.getItem("articoli");
       $('#articoli_list').val('');
       $.each(articoli, function(index, val) {
         $('#articoli_list').append('<li class="table-view-cell"> <a class="navigate-right" href="#" > ' + val.nome + '(' + val.telefono + ') <p>' + val.citta + '</p> </a> </li>');
