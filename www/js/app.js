@@ -45,21 +45,15 @@ $(document).ready(function() {
     // Only call the initializer if it exists
     if (func) {
       func();
-    }
-  }
-  jQuery(document).ready(function($) {
-    // Initialize the page on push
-    window.addEventListener('push', function(e) {
-      // Remove the host from the URL to get the pathname
-      var pathname = e.detail.state.url.replace(window.location.origin, '');
-      initializePage(pathname);
+      // Initialize the page on push
+      window.addEventListener('push', function(e) {
+        // Remove the host from the URL to get the pathname
+        var pathname = e.detail.state.url.replace(window.location.origin, '');
+        initializePage(pathname);
+      });
+      // Initialize the page on load, using the current pathname
+      initializePage(window.location.pathname);
     });
-    // Initialize the page on load, using the current pathname
-    initializePage(window.location.pathname);
-  });
-  // document.addEventListener("deviceready", onDeviceReady, false);
-  // onDeviceReady();
-  // window.addEventListener('push', myFunction);
 });
 // function onDeviceReady() {
 //   var clienti = [{
