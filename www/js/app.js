@@ -26,6 +26,7 @@ $(document).ready(function() {
       var clienti = simpleStorage.get('clienti');
       console.log(clienti);
       $.each(clienti, function(index, val) {
+        console.log(val);
         $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.citta + ' < /p> < /a > < /li>');
       });
     },
