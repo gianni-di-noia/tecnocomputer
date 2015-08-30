@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/app.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/ratchet.min.js"></script>
-    <script type="text/javascript" src="js/simpleStorage.js"></script>
+    <!-- <script type="text/javascript" src="js/simpleStorage.js"></script> -->
+    <!-- <script type="text/javascript" src="js/app.js"></script> -->
   </head>
   <body>
     <header class="bar bar-nav">
@@ -23,15 +24,6 @@
 
     <div class="content">
       <ul class="table-view" id="clienti_list"> </ul>
-      <script type="text/javascript">
-      $(document).ready(function() {
-        var clienti = simpleStorage.get('clienti');
-        console.log(clienti);
-        $.each(clienti, function(index, val) {
-            $.('#clienti_list').append('<li class="table-view-cell"> < a class = "navigate-right" href = "#" > ' + val.nome + ' < p > ' + val.città + ' < /p> < /a > < /li>');
-        });
-      });
-</script>
     </div><!-- /.content -->
   </body>
 </html>
