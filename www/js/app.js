@@ -69,6 +69,8 @@ function onDeviceReady() {
   window.addEventListener('push', function(e) {
     // Remove the host from the URL to get the pathname
     var file_name = e.detail.state.url.replace('file:///android_asset/www/', '');
+    var file_name = file_name.replace('http://localhost:8000/', '');
+    console.log(file_name);
     initializePage(file_name);
   });
   // Initialize the page on load, using the current pathname
