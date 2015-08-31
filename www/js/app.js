@@ -1,5 +1,6 @@
 $(document).ready(function() {
   document.addEventListener("deviceready", onDeviceReady, false);
+  onDeviceReady();
 });
 
 function onDeviceReady() {
@@ -25,7 +26,6 @@ function onDeviceReady() {
       }];
       db_set("clienti", clienti);
       db_set("articoli", articoli);
-      console.log(articoli);
     },
     'clienti.html': function() {
       var clienti = db_get("clienti");
@@ -80,5 +80,6 @@ function db_set(key, value) {
 }
 
 function db_get(key) {
-  return $.parseJSON(window.localStorage.getItem(key));
+  var data = $.parseJSON(window.localStorage.getItem(key));
+  return data;
 }
