@@ -25,6 +25,7 @@ function onDeviceReady() {
       }];
       db_set("clienti", clienti);
       db_set("articoli", articoli);
+      console.log(articoli);
     },
     'clienti.html': function() {
       var clienti = db_get("clienti");
@@ -42,10 +43,10 @@ function onDeviceReady() {
       var articoli = db_get("articoli");
       console.log(articoli);
       $('#articoli_list').html('');
-      $.each(articoli, function(index, val) {
+      $.each(articoli, function(index, articolo) {
         $.get('articolo.html', function(template) {
           $.tmpl(template, {
-            'val': val
+            'articolo': articolo
           }).appendTo('#articoli_list');
         });
       });
